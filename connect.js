@@ -3,7 +3,7 @@ const Request = require('tedious').Request;
 const TYPES = require('tedious').TYPES;
 
 const config = {
-  server: '(localdb)\MSSQLLocalDB',
+  server: 'localhost',
   authentication: {
       type: 'default',
       options: {
@@ -18,6 +18,7 @@ const config = {
 
 
 var connection = new Connection(config);
+console.log(connection.config);
 console.log('Still not Connected');
 // Attempt to connect and execute queries if connection goes through
 connection.on('connect', function(err) {
@@ -29,3 +30,4 @@ connection.on('connect', function(err) {
 });
 
 console.log('Still not Connected');
+//connection.connect();
