@@ -18,9 +18,7 @@ const config = {
 
 
 var connection = new Connection(config);
-console.log(connection.config);
-console.log('Still not Connected');
-// Attempt to connect and execute queries if connection goes through
+//console.log(connection.config);
 connection.on('connect', function(err) {
   if (err) {
     console.log(err);
@@ -28,6 +26,4 @@ connection.on('connect', function(err) {
     console.log('Connected');
   }
 });
-
-console.log('Still not Connected');
-//connection.connect();
+connection.connect();
