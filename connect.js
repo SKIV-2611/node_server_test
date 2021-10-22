@@ -8,17 +8,19 @@ const config = {
       type: 'default',
       options: {
           userName: 'sa',
-          password: '$aHyumebo'
+          password: '!&aHyumebo'
       }
   },
   options: {
-      database: 'DBS_gridContext-6a8df6d3-4faa-4384-9f7e-5aa4364bc234'
+	  port: 1433,
+      database: 'DBS_gridContext-6a8df6d3-4faa-4384-9f7e-5aa4364bc234'//,
+	  //instanceName: '(localDB)\\MSSQLLocalDB'
   }
 }
 
 
 var connection = new Connection(config);
-//console.log(connection.config);
+console.log(connection.config);
 connection.on('connect', function(err) {
   if (err) {
     console.log(err);
